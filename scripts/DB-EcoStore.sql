@@ -6,6 +6,7 @@ create table Usuario(
 	CodUsu int,
     Nome varchar(25),
     DataNasc date,
+    Senha varchar(100),
     CPF int,
     Endereco int,
     Telefone int,

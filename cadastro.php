@@ -7,7 +7,7 @@ $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 $connect = mysql_connect('nome_do_servidor','nome_de_usuario','senha');
 $db = mysql_select_db('nome_do_banco_de_dados');
-$query_select = "SELECT login FROM usuarios WHERE login = '$login'";
+$query_select = "SELECT login FROM usuario WHERE login = '$login'";
 $select = mysql_query($query_select,$connect);
 $array = mysql_fetch_array($select);
 $logarray = $array['login'];
@@ -47,7 +47,7 @@ if($telefone == "" || $telefone == null){
         die();
 
       }else{
-        $query = "INSERT INTO usuarios (login,senha,nome,,cpf,telefone) VALUES ('$login','$senha','$nome','$cpf','$telefone')";
+        $query = "INSERT INTO usuario (login,senha,nome,,cpf,telefone) VALUES ('$login','$senha','$nome','$cpf','$telefone')";
         $insert = mysql_query($query,$connect);
 
         if($insert){
