@@ -4,6 +4,7 @@ use EcoStore;
 
 create table Usuario(
 	CodUsu int,
+    LoginS varchar(25),
     Nome varchar(25),
     DataNasc date,
     Senha varchar(100),

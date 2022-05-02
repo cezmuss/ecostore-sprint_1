@@ -2,7 +2,7 @@
   <?php require 'cadastro.html';?>
   <?php
 
-  $login    = $_POST['login'];
+  $login    = $_POST['logins'];
   $senha    = MD5($_POST['senha']);
   $nome     = $_POST['nome'];
   $cpf      = $_POST['cpf'];
@@ -15,11 +15,9 @@
   /*$logarray = $array['login'];*/
 
     
-  $insert = "INSERT INTO Usuario (login,senha,nome,cpf,telefone) VALUES ('$login','$senha','$nome','$cpf','$telefone')";
+  $insert = "INSERT INTO Usuario (LoginS,Senha,Nome,Cpf,Telefone) VALUES ('$login','$senha','$nome','$cpf','$telefone')";
   if ($res = mysqli_query($connect,$insert)){
-    echo"<script language='javascript' type='text/javascript'>
-            alert('Usuário cadastrado com sucesso!');window.location.
-            href='login.html'</script>";
+    echo"Successo!";
   }else{
     echo "Erro: " . mysqli_error($connect);
   }
