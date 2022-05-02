@@ -8,4 +8,4 @@ EcoStore é uma loja de produtos sustentáveis sempre pensando no meio ambiente,
 ### 2. Edite as portas do MySQL no XAMPP para 3307  
 ### 3. Inicie o XAMPP  
 ### 4. Importe o script "DB-EcoStore.sql" da pasta scripts na aba "Importar" no MyPHPAdmin
-### 5. Abra http://localhost/ecostore/cadastro.html  ou http://localhost:3307/ecostore/cadastro.html  
+### 5. Abra http://localhost/ecostore/cadastro.html  ou http://127.0.0.1/ecostore/cadastro.html  
