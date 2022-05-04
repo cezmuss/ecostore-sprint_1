@@ -14,7 +14,6 @@ create table Usuario(
 )
 ENGINE = InnoDB;
 
-
 create table Telefone(
 	CodTel int NOT NULL AUTO_INCREMENT,
     CodUsu int NOT NULL,
@@ -22,6 +21,7 @@ create table Telefone(
     primary key (CodTel)
 )
 ENGINE = InnoDB;
+
 
 create table Endereco(
 	CodEnd int NOT NULL AUTO_INCREMENT,
@@ -34,6 +34,7 @@ create table Endereco(
 )
 ENGINE = InnoDB;
 
+
 create table Vendedor(
 	CodVend int NOT NULL AUTO_INCREMENT,
     CodUsu int NOT NULL,
@@ -42,6 +43,7 @@ create table Vendedor(
     primary key (CodVend)
 )
 ENGINE = InnoDB;
+
 
 create table Produto(
 	CodProduto int NOT NULL AUTO_INCREMENT,
@@ -54,6 +56,7 @@ create table Produto(
 )
 ENGINE = InnoDB;
 
+
 create table Venda(
 	CodVenda int NOT NULL AUTO_INCREMENT,
     CodUsu int NOT NULL,
@@ -64,6 +67,12 @@ create table Venda(
     primary key (CodVenda)
 )
 ENGINE = InnoDB;
+
+
+alter table Usuario
+add foreign key (Endereco) references Endereco(CodEnd),
+add foreign key (Telefone) references Telefone(CodTel);
+
 
 alter table Telefone
 add foreign key (CodUsu) references Usuario(CodUsu);
