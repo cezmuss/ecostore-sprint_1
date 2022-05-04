@@ -5,7 +5,7 @@
 
   <?php
 
-  $conn = mysqli_connect("127.0.0.1","root","","EcoStore");
+  $conn = mysqli_connect("localhost","root","","EcoStore");
 
   $login    = mysqli_real_escape_string($conn, $_REQUEST['login']);
   $senha    = mysqli_real_escape_string($conn, $_REQUEST['senha']);
