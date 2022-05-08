@@ -93,6 +93,7 @@ h2 {
   font-variant: unset;
   font-size: normal;
 }
-html.table {
+table {
 	align-self: center;
+	background-color: aliceblue;
 }

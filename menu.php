@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<div class="logo"><img src="images/logoo.png" width="100px" />
+	<div class="logo"><img src="images/logo.png" width="100px" />
 		<h2> Ecostore </h2>
 	</div>
 	<div class="menu">

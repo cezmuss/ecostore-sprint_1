@@ -1,6 +1,7 @@
 <html>
+<?php require 'menu.php'; ?>
 	<body>
-		<?php require 'menu.php'; ?>
+		
 		<?php
 		/* Conexão usando OOP do PHP */
 		$conn = new mysqli("localhost", "root", "", "EcoStore");
@@ -50,6 +51,33 @@
 
 		$conn->close();
 		?>
+		<br>
+		<form method="POST" action="">
+			<input type="text" name="ID" id="ID">
+			<input type="submit" name="Deletar" value="Deletar">
+		</form>
+		<?php
+			/* Conexão usando OOP do PHP */
+			$conn = new mysqli("localhost", "root", "", "EcoStore");
+
+			/* Checa conexão */
+			if ($conn->connect_error) {
+				die("Conexão Falhou: " . $conn->connect_error);
+			}
+
+			$usuario = $_REQUEST['ID'];
+
+			$sqlQuery = "DELETE FROM Usuario AND Telefone WHERE CodUsu = '$usuario';";
+
+			if ($conn->query($sqlQuery) === TRUE) {
+				echo "Excluido!";
+			}else{
+				echo "Erro: " . $sqlquery . $conn->error;
+			}
+		?>
+
+	$conn->close();
+?>
 	</body>
 
 </html>
