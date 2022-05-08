@@ -1,4 +1,4 @@
-html>
+<html>
 
 <head>
     <title> Cadastro de usuário </title>
@@ -7,17 +7,7 @@ html>
 </head>
 
 <body>
-    <div class="logo"><img src="images/logoo.png" width="100px" />
-        <h2> Ecostore </h2>
-    </div>
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Categorias</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Cadastro</a>
-        <a href="usuCad.php">Usuários Cadastrados</a>
-    </div>
-    <h1> Usuários Cadastrados</h1>
+    <?php require 'menu.php'; ?>
     <?php
         /* Conexão usando OOP do PHP */
         $conn = new mysqli("localhost", "root", "", "EcoStore");
@@ -27,12 +17,16 @@ html>
             die("Conexão Falhou: " . $conn->connect_error);
         }
 
-        $sqlQuery = "";
+        $sqlQuery = "SELECT Usuario.CodUsu, Usuario.LoginS, Usuario.Nome, Usuario.CPF, Telefone.NumTel
+                    ";
+        $result = $conn->query($sqlQuery);
 
-        echo "
-            <table> 
+        if ($result->num_rows > 0) {
+            echo "
+                <table> 
 
-        ";
+            ";
+        }
 
         $conn->close();
     ?>
