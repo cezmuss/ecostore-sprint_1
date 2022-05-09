@@ -1,11 +1,5 @@
 <?php
-  /* Conexão usando OOP do PHP */
-  $conn = new mysqli("localhost", "root", "", "EcoStore");
-
-  /* Checa conexão */
-  if ($conn->connect_error) {
-    die("Conexão Falhou: " . $conn->connect_error);
-  }
+  require 'connDB.php';
 
   /* Array que puxa os dados do form */
   $login    = $_REQUEST['login'];
@@ -22,9 +16,7 @@
       COMMIT;";
 
   if ($conn->multi_query($sqlquery) === TRUE) {
-    echo '<script language="javascript">';
-		echo 'alert("Sucesso!")';
-		echo '</script>';
+    echo "Sucesso!";
   } else {
     echo "Erro: " . $sqlquery . $conn->error;
   }

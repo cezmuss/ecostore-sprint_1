@@ -3,13 +3,7 @@
 	<input type="submit" name="Deletar" value="Deletar">
 </form>
 <?php
-	/* Conexão usando OOP do PHP */
-	$conn = new mysqli("localhost", "root", "", "EcoStore");
-
-	/* Checa conexão */
-	if ($conn->connect_error) {
-		die("Conexão Falhou: " . $conn->connect_error);
-	}
+	require 'connDB.php';
 
 	$usuario = $_REQUEST['ID'];
 
