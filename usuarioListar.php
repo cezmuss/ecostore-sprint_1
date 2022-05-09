@@ -1,6 +1,9 @@
 <html>
+
 	<body>
-		<?php require 'menu.php'; ?>
+	<?php require 'menu.php'; ?>
+		<br>
+		<h1>Usuários</h1>
 		<?php
 		/* Conexão usando OOP do PHP */
 		$conn = new mysqli("localhost", "root", "", "EcoStore");
@@ -18,7 +21,7 @@
 
 		if ($result = $conn->query($sqlQuery)) {
 			echo "
-				<table>
+				<table class='center' style='border-spacing: 5px; padding-left: 2px; padding-right: 2px;'>
 						<tr>
 							<th>ID</th>
 							<th>Login</th>
@@ -50,6 +53,9 @@
 
 		$conn->close();
 		?>
+		<br>
+		<?php include 'usuarioDel.php'; ?>
+
 	</body>
 
 </html>

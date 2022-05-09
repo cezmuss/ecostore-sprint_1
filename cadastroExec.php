@@ -14,8 +14,6 @@
   $cpf      = $_REQUEST['cpf'];
   $telefone = $_REQUEST['telefone'];
 
-  echo $login . " " . $nome . "<br>";
-
   $sqlquery = "BEGIN;
       INSERT INTO Usuario (LoginS,Senha,Nome,Cpf) 
         VALUES ('$login','$senha','$nome','$cpf');
@@ -24,7 +22,9 @@
       COMMIT;";
 
   if ($conn->multi_query($sqlquery) === TRUE) {
-    echo "Successo!";
+    echo '<script language="javascript">';
+		echo 'alert("Sucesso!")';
+		echo '</script>';
   } else {
     echo "Erro: " . $sqlquery . $conn->error;
   }
