@@ -1,6 +1,7 @@
 <html>
     <body>
         <?php require 'menu.php'; ?>
+				<br>
         <h1> Cadastro </h1>
             <div class="center">
                 <form method="POST" action="cadastroExec.php">
